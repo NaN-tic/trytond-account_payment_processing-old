@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/field[@name='process_method']" position="after">
+        <separator id="processing" string="Processing" colspan="4"/>
+        <label name="processing_account"/>
+        <field name="processing_account"/>
+        <label name="processing_journal"/>
+        <field name="processing_journal"/>
+    </xpath>
+</data>
