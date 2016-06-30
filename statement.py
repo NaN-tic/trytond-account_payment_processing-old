@@ -35,7 +35,8 @@ class StatementMoveLine:
         methods=['invoice'])
     def on_change_payment(self):
         changes = super(StatementMoveLine, self).on_change_payment()
-        if self.payment and not self.invoice and self.payment.processing_move:
+        if (self.payment and not self.invoice and self.payment.processing_move
+                and not self.account):
             for line in self.payment.processing_move.lines:
                 if line.account != self.payment.line.account:
                     changes['account'] = line.account.id
