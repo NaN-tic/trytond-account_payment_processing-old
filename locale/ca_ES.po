@@ -1,0 +1,19 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:account.payment,processing_move:"
+msgid "Processing Move"
+msgstr "Assentament en procés"
+
+msgctxt "field:account.payment.journal,processing_account:"
+msgid "Processing Account"
+msgstr "Compte en procés"
+
+msgctxt "field:account.payment.journal,processing_journal:"
+msgid "Processing Journal"
+msgstr "Diari en procés"
+
+msgctxt "view:account.payment.journal:"
+msgid "Processing"
+msgstr "En procés"
