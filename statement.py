@@ -69,3 +69,8 @@ class StatementMoveLine:
             for lines in to_reconcile.itervalues():
                 if not sum((l.debit - l.credit) for l in lines):
                     MoveLine.reconcile(lines)
+
+    def _check_invoice_amount_to_pay(self):
+        if self.payment and self.payment.processing_move:
+            return
+        super(StatementMoveLine, self)._check_invoice_amount_to_pay()
