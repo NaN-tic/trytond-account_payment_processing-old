@@ -54,24 +54,24 @@ Create chart of accounts::
 Create processing and bank discount accounts::
 
     >>> Account = Model.get('account.account')
-    >>> customer_processing_payments = Account(
-    ...     name='Customers Processing Payments',
-    ...     type=receivable.type,
-    ...     bank_reconcile=True,
-    ...     reconcile=True,
-    ...     party_required=True,
-    ...     deferral=True,
-    ...     parent=receivable.parent,
-    ...     kind='other')
+    >>> customer_processing_payments = Account()
+    >>> customer_processing_payments.name = 'Customers Processing Payments'
+    >>> customer_processing_payments.parent = receivable.parent
+    >>> customer_processing_payments.kind = 'other'
+    >>> customer_processing_payments.type = receivable.type
+    >>> customer_processing_payments.bank_reconcile = True
+    >>> customer_processing_payments.reconcile = True
+    >>> customer_processing_payments.party_required = True
+    >>> customer_processing_payments.deferral = True
     >>> customer_processing_payments.save()
-    >>> customer_bank_discounts = Account(
-    ...     name='Customers Bank Discount',
-    ...     type=receivable.type,
-    ...     bank_reconcile=True,
-    ...     reconcile=True,
-    ...     deferral=True,
-    ...     parent=receivable.parent,
-    ...     kind='other')
+    >>> customer_bank_discounts = Account()
+    >>> customer_bank_discounts.name = 'Customers Bank Discount'
+    >>> customer_bank_discounts.type = receivable.type
+    >>> customer_bank_discounts.bank_reconcile = True
+    >>> customer_bank_discounts.reconcile = True
+    >>> customer_bank_discounts.deferral = True
+    >>> customer_bank_discounts.parent = receivable.parent
+    >>> customer_bank_discounts.kind = 'other'
     >>> customer_bank_discounts.save()
 
 Create and get journals::
