@@ -143,10 +143,8 @@ class Payment:
 
         for payment in payments:
             if (payment.journal.processing_account
-                    and payment.journal.processing_account.reconcile
                     and payment.processing_move
                     and payment.journal.clearing_account
-                    and payment.journal.clearing_account.reconcile
                     and payment.clearing_move):
                 to_reconcile = defaultdict(list)
                 lines = (payment.processing_move.lines
